@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Android">
+        <parameter name="platform" value="platform_being_executed"/>
+        <groups>
+            <run>
+                <include name = "Single_Smoke"> </include>
+                <exclude name = "Sensitive_Tests"> </exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.kamivision.testcases.AccountTests"/>
+            </classes>
+    </test>
+</suite>

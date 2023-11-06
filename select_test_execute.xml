@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <listeners>
+        <listener class-name="utilities.retryLogic.RetryListener"></listener>
+    </listeners>
+    <test name="platform_being_executed">
+        <parameter name="platform" value="platform_being_executed"/>
+        <groups>
+            <run>
+                <include name = "Single_Smoke"> </include>
+                <exclude name = ""> </exclude>
+            </run>
+        </groups>
+        <classes>
+            test_cases_to_be_executed
+        </classes>
+    </test>
+</suite>

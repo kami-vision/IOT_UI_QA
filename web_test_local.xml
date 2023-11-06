@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <listeners>
+        <listener class-name="utilities.retryLogic.RetryListener"></listener>
+    </listeners>
+    <test name="platform_being_executed">
+        <parameter name="platform" value="platform_being_executed"/>
+        <groups>
+            <run>
+                <include name = "Single_Smoke"> </include>
+                <include name = "web_KamiCloud"> </include>
+                <include name = "en_locale"> </include>
+                <exclude name = ""> </exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.kamivision.testcases.web.WebKamiCloudLaunchLogin"/>
+            <class name="com.kamivision.testcases.web.WebKamiCloudYearlyPlansVerify"/>
+            <class name="com.kamivision.testcases.web.WebKamiCloudMonthlyPlansPurchase"/>
+            <class name="com.kamivision.testcases.web.WebKamiCloudYearlyPlansPurchase"/>
+        </classes>
+    </test>
+</suite>
